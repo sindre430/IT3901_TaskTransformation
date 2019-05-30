@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformation="http://www.example.org/transformation">
+  <transformation:FileInformation filename="Oppg5.java">
+    <lines>import java.util.ArrayList;</lines>
+    <lines>import java.util.List;</lines>
+    <lines></lines>
+    <lines>class Person{</lines>
+    <lines>    private String firstName;</lines>
+    <lines>    private String lastName;</lines>
+    <lines>    private int age;</lines>
+    <lines></lines>
+    <lines>    Person(String firstName, String lastName, int age){                              // {editText, sourceRegion: &quot;Person&quot;, replacement: &quot;private Person&quot;}</lines>
+    <lines>        this.firstName = firstName;</lines>
+    <lines>        this.lastName = lastName;</lines>
+    <lines>        this.age = age;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public String getFirstName() {</lines>
+    <lines>        return firstName;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public void setFirstName(String firstName) {</lines>
+    <lines>        this.firstName = firstName;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public String getLastName() {</lines>
+    <lines>        return lastName;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public void setLastName(String lastName) {</lines>
+    <lines>        this.lastName = lastName;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public int getAge() {</lines>
+    <lines>        return age;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public void setAge(int age) {</lines>
+    <lines>        this.age = age;</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public String getFullName(){</lines>
+    <lines>        return getFirstName().concat(&quot; &quot;).concat(getLastName());                       // {blank, from: &quot;getFirstName&quot;} (Alt etter &quot;return&quot;)</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    public boolean isOlderThan(Person person){                                         // {blank, sourceRegion: &quot;boolean&quot;}</lines>
+    <lines>        return this.age > person.getAge();                                             // {multipleChoice, sourceRegion: &quot;>&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {editText, sourceRegion: &quot;person.getAge()&quot;, replacement: &quot;person.getFirstName()&quot;}</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>}</lines>
+    <lines></lines>
+    <lines>public class Family {</lines>
+    <lines></lines>
+    <lines>    private static List&lt;Person> family = new ArrayList&lt;>();</lines>
+    <lines></lines>
+    <lines>    public static void main(String[] args){</lines>
+    <lines>        Person ola = new Person(&quot;Ola&quot;, &quot;Nordmann&quot;, 21);                                // {moveable, groupId: 1, setId: 1, groupStart} {$variableName = random(10, 27)}{edit, input: &quot;21&quot;, output: $variableName}</lines>
+    <lines>        Person per = new Person(&quot;Per&quot;, &quot;Nordmann&quot;, 18);                                // {$variableName2 = $variableName-3}{edit, input: &quot;18&quot;, output: $variableName2}</lines>
+    <lines>        Person lisa = new Person(&quot;Lisa&quot;, &quot;Nordmann&quot;, 45);</lines>
+    <lines>        Person ole = new Person(&quot;Ole&quot;, &quot;Nordmann&quot;, 47);                                // {moveable, groupId: 1, setId: 1, groupEnd}</lines>
+    <lines>        addPersonToFamily(ola);                                                        // {moveable, groupId: 1, setId: 2, groupStart}</lines>
+    <lines>        addPersonToFamily(per);</lines>
+    <lines>        addPersonToFamily(lisa);</lines>
+    <lines>        addPersonToFamily(ole);                                                        // {moveable, groupId: 1, setId: 2, groupEnd}</lines>
+    <lines></lines>
+    <lines>        if(per.isOlderThan(ola)){                                                      // {moveable, groupId: 2}</lines>
+    <lines>            System.out.println(&quot;Per er eldre enn Ola&quot;);                                // {moveable, groupId: 2}</lines>
+    <lines>        }else if(ola.isOlderThan(per)){                                                // {moveable, groupId: 2}</lines>
+    <lines>            System.out.println(&quot;Ola er eldre enn Per&quot;);                                // {moveable, groupId: 2}</lines>
+    <lines>        }else{                                                                         // {moveable, groupId: 2}</lines>
+    <lines>            System.out.println(&quot;Per og Ola er like gamle&quot;);                            // {moveable, groupId: 2}</lines>
+    <lines>        }                                                                              // {moveable, groupId: 2}</lines>
+    <lines></lines>
+    <lines>        if(lisa.isOlderThan(ole)){                                                     // {moveable, groupId: 3, groupStart}</lines>
+    <lines>            System.out.println(&quot;Lisa er eldre enn Ole&quot;);</lines>
+    <lines>        }else if(ole.isOlderThan(lisa)){</lines>
+    <lines>            System.out.println(&quot;Ole er eldre enn Lisa&quot;);</lines>
+    <lines>        }else{</lines>
+    <lines>            System.out.println(&quot;Lisa og Ole er like gamle&quot;);</lines>
+    <lines>        }                                                                              // {moveable, groupId: 3, groupEnd}</lines>
+    <lines></lines>
+    <lines>        String[] familyNames = getAllNamesInFamily();</lines>
+    <lines></lines>
+    <lines>        for(int i=0; i&lt;familyNames.length; i++){                                       // {multipleChoice, input: &quot;&lt;&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {multipleChoice, input: &quot;i++&quot;, options: [&quot;i+=2&quot;, &quot;i&quot;, &quot;i++&quot;, &quot;i--&quot;, &quot;i-=2&quot;]}</lines>
+    <lines>            System.out.println(familyNames[i]);</lines>
+    <lines>        }</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    private static void addPersonToFamily(Person person){</lines>
+    <lines>        family.add(person);                                                            // {blank}</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>    private static String[] getAllNamesInFamily(){                                     // {moveable, groupId: 4, region: body}</lines>
+    <lines>        String[] names = new String[family.size()];</lines>
+    <lines>        for(int i=0; i&lt;family.size(); i++){</lines>
+    <lines>            names[i] = family.get(i).getFullName();</lines>
+    <lines>        }</lines>
+    <lines>        return names;</lines>
+    <lines>    }</lines>
+    <lines>    </lines>
+    <lines>}</lines>
+  </transformation:FileInformation>
+  <transformation:Container>
+    <transformationElements xsi:type="transformation:RandomNumberVariable" lineText="        Person ola = new Person(&quot;Ola&quot;, &quot;Nordmann&quot;, 21);                                // {moveable, groupId: 1, setId: 1, groupStart} {$variableName = random(10, 27)}{edit, input: &quot;21&quot;, output: $variableName}" lineNumber="54" name="variableName" minValue="10" maxValue="27"/>
+    <transformationElements xsi:type="transformation:StaticVariable" lineText="        Person per = new Person(&quot;Per&quot;, &quot;Nordmann&quot;, 18);                                // {$variableName2 = $variableName-3}{edit, input: &quot;18&quot;, output: $variableName2}" lineNumber="55" name="variableName2" value="$variableName-3"/>
+    <transformationElements xsi:type="transformation:EditText" lineText="    Person(String firstName, String lastName, int age){                              // {editText, sourceRegion: &quot;Person&quot;, replacement: &quot;private Person&quot;}" lineNumber="9">
+      <sourceRegion xsi:type="transformation:TextRegion" text="Person"/>
+      <replacement text="private Person"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:Blank" lineText="        return getFirstName().concat(&quot; &quot;).concat(getLastName());                       // {blank, from: &quot;getFirstName&quot;} (Alt etter &quot;return&quot;)" lineNumber="40"/>
+    <transformationElements xsi:type="transformation:Blank" lineText="    public boolean isOlderThan(Person person){                                         // {blank, sourceRegion: &quot;boolean&quot;}" lineNumber="43">
+      <sourceRegion xsi:type="transformation:TextRegion" text="boolean"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:MultipleChoice" lineText="        return this.age > person.getAge();                                             // {multipleChoice, sourceRegion: &quot;>&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {editText, sourceRegion: &quot;person.getAge()&quot;, replacement: &quot;person.getFirstName()&quot;}" lineNumber="44">
+      <sourceRegion xsi:type="transformation:TextRegion" text=">"/>
+      <options text=">"/>
+      <options text="&lt;"/>
+      <options text=">="/>
+      <options text="&lt;="/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:EditText" lineText="        return this.age > person.getAge();                                             // {multipleChoice, sourceRegion: &quot;>&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {editText, sourceRegion: &quot;person.getAge()&quot;, replacement: &quot;person.getFirstName()&quot;}" lineNumber="44">
+      <sourceRegion xsi:type="transformation:TextRegion" text="person.getAge()"/>
+      <replacement text="person.getFirstName()"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:Moveable" lineText="        Person ola = new Person(&quot;Ola&quot;, &quot;Nordmann&quot;, 21);                                // {moveable, groupId: 1, setId: 1, groupStart} {$variableName = random(10, 27)}{edit, input: &quot;21&quot;, output: $variableName}" lineNumber="54" groupId="1" setId="1" groupStart="true"/>
+    <transformationElements xsi:type="transformation:Moveable" lineText="        Person ole = new Person(&quot;Ole&quot;, &quot;Nordmann&quot;, 47);                                // {moveable, groupId: 1, setId: 1, groupEnd}" lineNumber="57" groupId="1" setId="1" groupEnd="true"/>
+    <transformationElements xsi:type="transformation:Moveable" lineText="        addPersonToFamily(ola);                                                        // {moveable, groupId: 1, setId: 2, groupStart}" lineNumber="58" groupId="1" setId="2" groupStart="true"/>
+    <transformationElements xsi:type="transformation:Moveable" lineText="        addPersonToFamily(ole);                                                        // {moveable, groupId: 1, setId: 2, groupEnd}" lineNumber="61" groupId="1" setId="2" groupEnd="true"/>
+    <transformationElements xsi:type="transformation:MultipleChoice" lineText="        for(int i=0; i&lt;familyNames.length; i++){                                       // {multipleChoice, input: &quot;&lt;&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {multipleChoice, input: &quot;i++&quot;, options: [&quot;i+=2&quot;, &quot;i&quot;, &quot;i++&quot;, &quot;i--&quot;, &quot;i-=2&quot;]}" lineNumber="81">
+      <sourceRegion xsi:type="transformation:TextRegion" text="for(int i=0; i&lt;familyNames.length; i++){                                       //"/>
+      <options text=">"/>
+      <options text="&lt;"/>
+      <options text=">="/>
+      <options text="&lt;="/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:MultipleChoice" lineText="        for(int i=0; i&lt;familyNames.length; i++){                                       // {multipleChoice, input: &quot;&lt;&quot;, options: [&quot;>&quot;, &quot;&lt;&quot;, &quot;>=&quot;, &quot;&lt;=&quot;]} {multipleChoice, input: &quot;i++&quot;, options: [&quot;i+=2&quot;, &quot;i&quot;, &quot;i++&quot;, &quot;i--&quot;, &quot;i-=2&quot;]}" lineNumber="81">
+      <sourceRegion xsi:type="transformation:TextRegion" text="for(int i=0; i&lt;familyNames.length; i++){                                       //"/>
+      <options text="i+=2"/>
+      <options text="i"/>
+      <options text="i++"/>
+      <options text="i--"/>
+      <options text="i-=2"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:Blank" lineText="        family.add(person);                                                            // {blank}" lineNumber="87"/>
+  </transformation:Container>
+</xmi:XMI>

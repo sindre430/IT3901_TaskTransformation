@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <task:FileInfo filename="CTest.c">
+    <lines>#include &lt;stdio.h></lines>
+    <lines>/*</lines>
+    <lines>{$var1 = random(0,10)}</lines>
+    <lines>*/</lines>
+    <lines>int main() //{multipleChoice, input:&quot;main&quot;, options:[&quot;main&quot;, &quot;Main&quot;, &quot;System.main&quot;]}</lines>
+    <lines>{</lines>
+    <lines>    int i, j, rows; </lines>
+    <lines></lines>
+    <lines>    printf(&quot;Enter number of rows: &quot;);</lines>
+    <lines>    scanf(&quot;%d&quot;,&amp;rows);</lines>
+    <lines>    for(i=1; i&lt;=rows; ++i)</lines>
+    <lines>    { // {movable, region:body}</lines>
+    <lines>        for(j=1; j&lt;=i; ++j) // {blank, input:&quot;j&lt;=i&quot;} </lines>
+    <lines>        {</lines>
+    <lines>            printf(&quot;* &quot;);</lines>
+    <lines>        }</lines>
+    <lines>        printf(&quot;\n&quot;); #{edit, input:&quot;\n&quot;, output:&quot;\b&quot;}</lines>
+    <lines>    }</lines>
+    <lines>    return 0;</lines>
+    <lines>}</lines>
+  </task:FileInfo>
+  <task:Container>
+    <tasks xsi:type="task:RandomIntegerVariable" line="{$var1 = random(0,10)}" lineNumber="3" name="var1" to="10"/>
+    <tasks xsi:type="task:MultipleChoice" line="int main() //{multipleChoice, input:&quot;main&quot;, options:[&quot;main&quot;, &quot;Main&quot;, &quot;System.main&quot;]}" lineNumber="5">
+      <input string="main"/>
+      <options>main</options>
+      <options>Main</options>
+      <options>System.main</options>
+    </tasks>
+    <tasks xsi:type="task:Movable" line="    { // {movable, region:body}" lineNumber="13" region="BODY"/>
+    <tasks xsi:type="task:Blank" line="        for(j=1; j&lt;=i; ++j) // {blank, input:&quot;j&lt;=i&quot;} " lineNumber="14">
+      <input string="j&lt;=i"/>
+    </tasks>
+  </task:Container>
+</xmi:XMI>

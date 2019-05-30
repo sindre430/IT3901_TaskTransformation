@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<task:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <tasks xsi:type="task:Edit" line="&#x9;public static void main(String[] args) { //{edit, input:&quot;args&quot;, output:&quot;ARGS&quot;}" lineNumber="2">
+    <input string="args"/>
+    <output string="ARGS"/>
+  </tasks>
+  <tasks xsi:type="task:Edit" line="&#x9;&#x9;//{edit, output:&quot;System.out.println(&quot;test&quot;)&quot;}" lineNumber="3">
+    <input/>
+    <output string="System.out.println(&quot;test&quot;)"/>
+  </tasks>
+  <tasks xsi:type="task:Edit" line="&#x9;&#x9;for(int i=0; i&lt;10; i++) { //{edit, output:&quot;0&quot;, input:5}" lineNumber="4">
+    <input fromIndex="5"/>
+    <output string="0"/>
+  </tasks>
+  <tasks xsi:type="task:Edit" line="&#x9;&#x9;&#x9;System.out.println(i); //{edit, input:&quot;ln&quot;}" lineNumber="5">
+    <input string="ln"/>
+  </tasks>
+  <tasks xsi:type="task:Edit" line="&#x9;&#x9;&#x9;System.out.println(&quot;---&quot;); //{edit, input:33-36, output:&quot;...&quot;}" lineNumber="6">
+    <input fromIndex="33" toIndex="36"/>
+    <output string="..."/>
+  </tasks>
+</task:Container>

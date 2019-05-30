@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformation="http://www.example.org/transformation">
+  <transformation:FileInformation filename="Oppg2.java">
+    <lines>public class Oppg2 {</lines>
+    <lines></lines>
+    <lines>    public static void main(String[] args) { // {moveable, regionType: body}</lines>
+    <lines>        String output = &quot;Hello World&quot;;</lines>
+    <lines></lines>
+    <lines>        System.out.println(output);</lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>}</lines>
+  </transformation:FileInformation>
+  <transformation:Container>
+    <transformationElements xsi:type="transformation:Moveable" lineText="    public static void main(String[] args) { // {moveable, regionType: body}" lineNumber="3" regionType="BODY"/>
+  </transformation:Container>
+</xmi:XMI>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <task:FileInfo filename="MovableTest.java">
+    <lines>public class MovableTest {</lines>
+    <lines></lines>
+    <lines>	public static void main(String[] args){</lines>
+    <lines>        Person ola = new Person(&quot;Ola&quot;, &quot;Nordmann&quot;, 21);                                // {movable, set: 1, block: 1, start}</lines>
+    <lines>        Person per = new Person(&quot;Per&quot;, &quot;Nordmann&quot;, 18);</lines>
+    <lines>        Person lisa = new Person(&quot;Lisa&quot;, &quot;Nordmann&quot;, 45);</lines>
+    <lines>        Person ole = new Person(&quot;Ole&quot;, &quot;Nordmann&quot;, 47);                                // {movable, set:1, block: 1, end}</lines>
+    <lines>        addPersonToFamily(ola);                                                        // {movable, set: 1, block: 2, start}</lines>
+    <lines>        addPersonToFamily(per);</lines>
+    <lines>        addPersonToFamily(lisa);</lines>
+    <lines>        addPersonToFamily(ole);                                                        // {movable, set: 1, block: 2, end}</lines>
+    <lines>        if(per.isOlderThan(ola)){                                                      // {movable, set: 2}</lines>
+    <lines>            System.out.println(&quot;Per er eldre enn Ola&quot;);                                // {movable, set: 2}</lines>
+    <lines>        }else if(ola.isOlderThan(per)){                                                // {movable, set: 2}</lines>
+    <lines>            System.out.println(&quot;Ola er eldre enn Per&quot;);                                // {movable, set: 2}</lines>
+    <lines>        }else{                                                                         // {movable, set: 2}</lines>
+    <lines>            System.out.println(&quot;Per og Ola er like gamle&quot;);                            // {movable, set: 2}</lines>
+    <lines>        }                                                                              // {movable, set: 2}</lines>
+    <lines>        if(lisa.isOlderThan(ole)){                                                     // {movable, set: 3, start}</lines>
+    <lines>            System.out.println(&quot;Lisa er eldre enn Ole&quot;);</lines>
+    <lines>        }else if(ole.isOlderThan(lisa)){</lines>
+    <lines>            System.out.println(&quot;Ole er eldre enn Lisa&quot;);</lines>
+    <lines>        }else{</lines>
+    <lines>            System.out.println(&quot;Lisa og Ole er like gamle&quot;);</lines>
+    <lines>        }                                                                              // {movable, set: 3, end}</lines>
+    <lines>	}</lines>
+    <lines>	</lines>
+    <lines>}</lines>
+    <lines>class Person{</lines>
+    <lines>    private String firstName;</lines>
+    <lines>    private String lastName;</lines>
+    <lines>    private int age;</lines>
+    <lines>    Person(String firstName, String lastName, int age){ //{movable, region:body}</lines>
+    <lines>        this.firstName = firstName;</lines>
+    <lines>        this.lastName = lastName;</lines>
+    <lines>        this.age = age;</lines>
+    <lines>    }</lines>
+    <lines>    public String getFirstName() {</lines>
+    <lines>        return firstName;</lines>
+    <lines>    public void setFirstName(String firstName) {</lines>
+    <lines>    public String getLastName() {</lines>
+    <lines>        return lastName;</lines>
+    <lines>    public void setLastName(String lastName) {</lines>
+    <lines>    public int getAge() {</lines>
+    <lines>        return age;</lines>
+    <lines>    public void setAge(int age) {</lines>
+    <lines>    public String getFullName(){</lines>
+    <lines>        return getFirstName().concat(&quot; &quot;).concat(getLastName());</lines>
+    <lines>    public boolean isOlderThan(Person person){</lines>
+    <lines>        return this.age > person.getAge();</lines>
+  </task:FileInfo>
+  <task:Container>
+    <tasks xsi:type="task:Movable" line="        Person ola = new Person(&quot;Ola&quot;, &quot;Nordmann&quot;, 21);                                // {movable, set: 1, block: 1, start}" lineNumber="4" set="1" block="1" start="true"/>
+    <tasks xsi:type="task:Movable" line="        Person ole = new Person(&quot;Ole&quot;, &quot;Nordmann&quot;, 47);                                // {movable, set:1, block: 1, end}" lineNumber="7" set="1" block="1" end="true"/>
+    <tasks xsi:type="task:Movable" line="        addPersonToFamily(ola);                                                        // {movable, set: 1, block: 2, start}" lineNumber="8" set="1" block="2" start="true"/>
+    <tasks xsi:type="task:Movable" line="        addPersonToFamily(ole);                                                        // {movable, set: 1, block: 2, end}" lineNumber="11" set="1" block="2" end="true"/>
+    <tasks xsi:type="task:Movable" line="        if(per.isOlderThan(ola)){                                                      // {movable, set: 2}" lineNumber="13" set="2"/>
+    <tasks xsi:type="task:Movable" line="            System.out.println(&quot;Per er eldre enn Ola&quot;);                                // {movable, set: 2}" lineNumber="14" set="2"/>
+    <tasks xsi:type="task:Movable" line="        }else if(ola.isOlderThan(per)){                                                // {movable, set: 2}" lineNumber="15" set="2"/>
+    <tasks xsi:type="task:Movable" line="            System.out.println(&quot;Ola er eldre enn Per&quot;);                                // {movable, set: 2}" lineNumber="16" set="2"/>
+    <tasks xsi:type="task:Movable" line="        }else{                                                                         // {movable, set: 2}" lineNumber="17" set="2"/>
+    <tasks xsi:type="task:Movable" line="            System.out.println(&quot;Per og Ola er like gamle&quot;);                            // {movable, set: 2}" lineNumber="18" set="2"/>
+    <tasks xsi:type="task:Movable" line="        }                                                                              // {movable, set: 2}" lineNumber="19" set="2"/>
+    <tasks xsi:type="task:Movable" line="        if(lisa.isOlderThan(ole)){                                                     // {movable, set: 3, start}" lineNumber="21" set="3"/>
+    <tasks xsi:type="task:Movable" line="        }                                                                              // {movable, set: 3, end}" lineNumber="27" set="3"/>
+    <tasks xsi:type="task:Movable" line="    Person(String firstName, String lastName, int age){ //{movable, region:body}" lineNumber="37" region="BODY"/>
+  </task:Container>
+</xmi:XMI>

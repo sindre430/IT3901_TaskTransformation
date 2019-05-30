@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transformation="http://www.example.org/transformation">
+  <transformation:FileInformation filename="Oppg4.java">
+    <lines>/*</lines>
+    <lines> * How many times is variable i printed out when the variable </lines>
+    <lines> * increases up to 10? //{editText, sourceRegion: &quot;10&quot;, replacement: $random1}</lines>
+    <lines> */</lines>
+    <lines></lines>
+    <lines>public class Oppg4 {</lines>
+    <lines></lines>
+    <lines>    public static void main(String[] args) {</lines>
+    <lines>        // {$random1 = random(10, 20)}</lines>
+    <lines>        // {$random2 = random(3, 5)}</lines>
+    <lines>        for(int i=0; i&lt;10; i+=2){ // {editText, sourceRegion: &quot;i&lt;10&quot;, replacement: &quot;i&lt;&quot;+$random1}</lines>
+    <lines>            if(i%3 == 0){ // {editText, sourceRegion: &quot;3&quot;, replacement: $random2}</lines>
+    <lines>                System.out.println(i);</lines>
+    <lines>            }</lines>
+    <lines>        }</lines>
+    <lines></lines>
+    <lines>    }</lines>
+    <lines></lines>
+    <lines>}</lines>
+  </transformation:FileInformation>
+  <transformation:Container>
+    <transformationElements xsi:type="transformation:RandomNumberVariable" lineText="        // {$random1 = random(10, 20)}" lineNumber="9" name="random1" minValue="10" maxValue="20"/>
+    <transformationElements xsi:type="transformation:RandomNumberVariable" lineText="        // {$random2 = random(3, 5)}" lineNumber="10" name="random2" minValue="3" maxValue="5"/>
+    <transformationElements xsi:type="transformation:EditText" lineText=" * increases up to 10? //{editText, sourceRegion: &quot;10&quot;, replacement: $random1}" lineNumber="3">
+      <sourceRegion xsi:type="transformation:TextRegion" text="10"/>
+      <replacement variable="/1/@transformationElements.0"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:EditText" lineText="        for(int i=0; i&lt;10; i+=2){ // {editText, sourceRegion: &quot;i&lt;10&quot;, replacement: &quot;i&lt;&quot;+$random1}" lineNumber="11">
+      <sourceRegion xsi:type="transformation:TextRegion" text="i&lt;10"/>
+      <replacement text="i&lt;"/>
+      <replacement variable="/1/@transformationElements.0"/>
+    </transformationElements>
+    <transformationElements xsi:type="transformation:EditText" lineText="            if(i%3 == 0){ // {editText, sourceRegion: &quot;3&quot;, replacement: $random2}" lineNumber="12">
+      <sourceRegion xsi:type="transformation:TextRegion" text="3"/>
+      <replacement variable="/1/@transformationElements.1"/>
+    </transformationElements>
+  </transformation:Container>
+</xmi:XMI>

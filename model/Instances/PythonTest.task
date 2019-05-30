@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <task:FileInfo filename="PythonTest.py">
+    <lines>&quot;&quot;&quot;</lines>
+    <lines>Hangeman Game in Python</lines>
+    <lines>{$var1 = random(0,10)}</lines>
+    <lines></lines>
+    <lines>import time #{multipleChoice, input:&quot;time&quot;, options:[&quot;time&quot;, &quot;system.time&quot;, &quot;System.Time.time&quot;]}</lines>
+    <lines>name = raw_input(&quot;What is your name? &quot;)</lines>
+    <lines>print &quot;Hello, &quot; + name, &quot;Time to play hangman!&quot;</lines>
+    <lines>print &quot;&quot;</lines>
+    <lines>time.sleep(1)</lines>
+    <lines>print &quot;Start guessing...&quot;</lines>
+    <lines>time.sleep(0.5)</lines>
+    <lines>word = &quot;secret&quot;</lines>
+    <lines>guesses = ''</lines>
+    <lines>turns = 10</lines>
+    <lines>while turns > 0:         </lines>
+    <lines>    failed = 0             </lines>
+    <lines>    for char in word: #{movable, region:body}   </lines>
+    <lines>        if char in guesses:    </lines>
+    <lines>        	print char,    </lines>
+    <lines>        else:</lines>
+    <lines>            print &quot;_&quot;,</lines>
+    <lines>            failed += 1</lines>
+    <lines>    if failed == 0: #{blank, input:&quot;failed == 0&quot;}      </lines>
+    <lines>        print &quot;You won&quot;  </lines>
+    <lines>        break              </lines>
+    <lines>    print</lines>
+    <lines>    guess = raw_input(&quot;guess a character:&quot;) </lines>
+    <lines>    guesses += guess</lines>
+    <lines>    if guess not in word:  </lines>
+    <lines>        turns -= 1 #{edit, input:&quot;-=&quot;, output:&quot;+=&quot;}</lines>
+    <lines>        print &quot;Wrong&quot;</lines>
+    <lines>        print &quot;You have&quot;, + turns, 'more guesses'</lines>
+    <lines>        if turns == 0:</lines>
+    <lines>            print &quot;You Loose&quot;  </lines>
+  </task:FileInfo>
+  <task:Container>
+    <tasks xsi:type="task:RandomIntegerVariable" line="{$var1 = random(0,10)}" lineNumber="3" name="var1" to="10"/>
+    <tasks xsi:type="task:MultipleChoice" line="import time #{multipleChoice, input:&quot;time&quot;, options:[&quot;time&quot;, &quot;system.time&quot;, &quot;System.Time.time&quot;]}" lineNumber="6">
+      <input string="time"/>
+      <options>time</options>
+      <options>system.time</options>
+      <options>System.Time.time</options>
+    </tasks>
+    <tasks xsi:type="task:Movable" line="    for char in word: #{movable, region:body}   " lineNumber="29" region="BODY"/>
+    <tasks xsi:type="task:Blank" line="    if failed == 0: #{blank, input:&quot;failed == 0&quot;}      " lineNumber="36">
+      <input string="failed == 0"/>
+    </tasks>
+    <tasks xsi:type="task:Edit" line="        turns -= 1 #{edit, input:&quot;-=&quot;, output:&quot;+=&quot;}" lineNumber="45">
+      <input string="-="/>
+      <output string="+="/>
+    </tasks>
+  </task:Container>
+</xmi:XMI>

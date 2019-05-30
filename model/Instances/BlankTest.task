@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<task:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <tasks xsi:type="task:Blank" line="&#x9;private String s1; //{blank, from:&quot;s1&quot;}" lineNumber="2">
+    <input string="s1; "/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;private String s2; //{blank, from:16}" lineNumber="3">
+    <input string="s2; "/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;private String s3; //{blank, from:9, to:15}" lineNumber="4">
+    <input string="String"/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;public static void main(String[] args) { // {blank, from:&quot;public&quot;, to:&quot;void&quot;}" lineNumber="7">
+    <input string="public static "/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;&#x9;System.out.println(&quot;Main&quot;); // {blank, input:&quot;System.out&quot;}" lineNumber="8">
+    <input string="System.out"/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;public String getStringOne() { //{blank, region:body}" lineNumber="11" region="BODY"/>
+  <tasks xsi:type="task:Blank" line="&#x9;public void setStringOne(String s) { //{blank, input:30-38}" lineNumber="15">
+    <input fromIndex="30" toIndex="38"/>
+  </tasks>
+  <tasks xsi:type="task:Blank" line="&#x9;&#x9;s1 = s; //{blank, input:14}" lineNumber="16">
+    <input fromIndex="14"/>
+  </tasks>
+</task:Container>

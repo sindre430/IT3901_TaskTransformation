@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.example.org/task">
+  <task:FileInfo filename="MultipleChoiceTest.java">
+    <lines></lines>
+    <lines>public class MultipleChoiceTest {</lines>
+    <lines>	private String s1;</lines>
+    <lines>	private String s2;</lines>
+    <lines>	private String s3;</lines>
+    <lines>	</lines>
+    <lines>	public static void main(String[] args) { // {multipleChoice, input:&quot;main&quot;, options:[&quot;main&quot;, &quot;Main&quot;, &quot;start&quot;, &quot;Start&quot;]}</lines>
+    <lines>		System.out.println(&quot;Main&quot;);</lines>
+    <lines>	}</lines>
+    <lines>	public void setStringOne(String s) { // {multipleChoice, input:25-33, options:[&quot;String s&quot;, &quot;int i&quot;, &quot;boolean b&quot;, &quot;float f&quot;]}</lines>
+    <lines>		s1 = s; //{multipleChoice, options:[&quot;s1 = s;&quot;, &quot;s2 = s;&quot;, &quot;s = s1;&quot;, &quot;s = s2;&quot;]}</lines>
+    <lines>}</lines>
+  </task:FileInfo>
+  <task:Container>
+    <tasks xsi:type="task:MultipleChoice" line="&#x9;public static void main(String[] args) { // {multipleChoice, input:&quot;main&quot;, options:[&quot;main&quot;, &quot;Main&quot;, &quot;start&quot;, &quot;Start&quot;]}" lineNumber="7">
+      <input string="main"/>
+      <options>main</options>
+      <options>Main</options>
+      <options>start</options>
+      <options>Start</options>
+    </tasks>
+    <tasks xsi:type="task:MultipleChoice" line="&#x9;public void setStringOne(String s) { // {multipleChoice, input:25-33, options:[&quot;String s&quot;, &quot;int i&quot;, &quot;boolean b&quot;, &quot;float f&quot;]}" lineNumber="11">
+      <input fromIndex="25" toIndex="33"/>
+      <options>String s</options>
+      <options>int i</options>
+      <options>boolean b</options>
+      <options>float f</options>
+    </tasks>
+    <tasks xsi:type="task:MultipleChoice" line="&#x9;&#x9;s1 = s; //{multipleChoice, options:[&quot;s1 = s;&quot;, &quot;s2 = s;&quot;, &quot;s = s1;&quot;, &quot;s = s2;&quot;]}" lineNumber="12">
+      <input string="s1 = s; //"/>
+      <options>s1 = s;</options>
+      <options>s2 = s;</options>
+      <options>s = s1;</options>
+      <options>s = s2;</options>
+    </tasks>
+  </task:Container>
+</xmi:XMI>
